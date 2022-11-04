@@ -36,6 +36,5 @@ jobs:
         id  : init
         run : terraform init
 
-
       - name: Terraform Destroy
         run : terraform destroy -var="key=${{ secrets.NEW_RELIC_API_KEY }}" -var="id=${{ secrets.NEW_RELIC_ACCOUNT_ID }}" -auto-approve
