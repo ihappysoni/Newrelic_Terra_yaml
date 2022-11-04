@@ -1,0 +1,53 @@
+name: First workflow Terraform
+
+# Controls when the workflow will run
+on:
+
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
+  # Allows you to run this workflow manually from the Actions tab
+  # workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs: 
+  terraform:
+    name: 'NR GitHub Actions Demo'
+    runs-on: ubuntu-latest
+     env:
+        api_key : ${{ secrets.NEW_RELIC_API_KEY }}
+        account_id: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.0.0
+
+      # - name: Create New Relic deployment marker
+      #   uses: newrelic/deployment-marker-action@v1
+      #   with:
+      #     apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
+      #     accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
+          
+
+      - name: Terraform Init
+        id  : init
+        run : terraform init
+
+
+      - name: Terraform Plan
+        id  : plan
+        run : terraform plan 
+        
+
+      - name: Terraform Apply
+        run : terraform apply -auto-approve
+
+      # - name: Terraform Destroy
+      #   run : terraform destroy -auto-approve
