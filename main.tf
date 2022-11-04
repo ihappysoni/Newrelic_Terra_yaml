@@ -65,25 +65,25 @@ resource "newrelic_nrql_alert_condition" "test_alert" {
 #     newrelic_alert_channel.email2.id
 #   ]
 # }
-resource "newrelic_notification_channel" "foo" {
-  account_id = 3660048
-  name = "email-example"
-  type = "EMAIL"
-  destination_id = newrelic_notification_destination.emails.id
-  product = "IINT"
+# resource "newrelic_notification_channel" "foo" {
+#   account_id = 3660048
+#   name = "email-example"
+#   type = "EMAIL"
+#   destination_id = newrelic_notification_destination.emails.id
+#   product = "IINT"
 
-  property {
-    key = "Notification"
-    value = "Synthetic Notification"
-  }
-}
-resource "newrelic_notification_destination" "emails" {
-  account_id = 3660048
-  name = "outlook/gmail"
-  type = "EMAIL"
+#   property {
+#     key = "Notification"
+#     value = "Synthetic Notification"
+#   }
+# }
+# resource "newrelic_notification_destination" "emails" {
+#   account_id = 3660048
+#   name = "outlook/gmail"
+#   type = "EMAIL"
 
-  property {
-    key = "email"
-    value = "ihappysoni@outlook.com,happy.soni944@gmail.com"
-  }
-}
+#   property {
+#     key = "email"
+#     value = "ihappysoni@outlook.com,happy.soni944@gmail.com"
+#   }
+# }
