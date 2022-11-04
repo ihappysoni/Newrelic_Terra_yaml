@@ -1,7 +1,7 @@
-# variable "api_key" {
-#   type = string  
-# }
-# variable "account_id" {
-#   type = number
+variable "api" {
+  type = string  
+}
+variable "id" {
+  type = number
 
-# }
+}

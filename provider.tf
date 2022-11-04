@@ -16,7 +16,7 @@ provider "newrelic" {
 
   # account_id =  var.account_id
   # api_key = var.api_key
-  account_id = var.NEW_RELIC_API_KEY
-  api_key = var.NEW_RELIC_ACCOUNT_ID
+  account_id = var.id
+  api_key = var.key
   region  = "US"        # US or EU (defaults to US)
 }
