@@ -1,8 +1,8 @@
 variable "api_key" {
   type = string 
-  default = api_key 
+  default = var.secrets.NEW_RELIC_API_KEY 
 }
 variable "account_id" {
   type = number
-  default = account_id
+  default = var.secrets.NEW_RELIC_ACCOUNT_ID
 }
