@@ -1,4 +1,4 @@
-variable "api" {
+variable "key" {
   type = string  
 }
 variable "id" {
