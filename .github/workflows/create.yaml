@@ -17,7 +17,7 @@ jobs:
   terraform:
     name: 'NR GitHub Actions Demo'
     runs-on: ubuntu-latest
-     env:
+    env:
         NEW_RELIC_API_KEY : ${{ secrets.NEW_RELIC_API_KEY }}
         NEW_RELIC_ACCOUNT_ID: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}    
     steps:
