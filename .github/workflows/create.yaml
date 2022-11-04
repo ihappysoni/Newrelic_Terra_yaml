@@ -29,11 +29,11 @@ jobs:
         with:
           terraform_version: 1.0.0
 
-      # - name: Create New Relic deployment marker
-      #   uses: newrelic/deployment-marker-action@v1
-      #   with:
-      #     apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
-      #     accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
+      - name: Create New Relic deployment marker
+        uses: newrelic/deployment-marker-action@v1
+        with:
+          apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
+          accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
           
 
       - name: Terraform Init
@@ -46,8 +46,8 @@ jobs:
         run : terraform plan 
         
 
-      # - name: Terraform Apply
-      #   run : terraform apply -auto-approve
+      - name: Terraform Apply
+        run : terraform apply -auto-approve
 
       - name: Terraform Destroy
         run : terraform destroy -auto-approve
