@@ -1,4 +1,4 @@
-name: First workflow Terraform
+name: First workflow Terraform Destroy
 
 # Controls when the workflow will run
 on:
@@ -38,4 +38,4 @@ jobs:
 
 
       - name: Terraform Destroy
-        run : terraform destroy  -var="key=${{ secrets.NEW_RELIC_API_KEY }}" -var="id=${{ secrets.NEW_RELIC_ACCOUNT_ID }}" -auto-approve
+        run : terraform destroy -var="key=${{ secrets.NEW_RELIC_API_KEY }}" -var="id=${{ secrets.NEW_RELIC_ACCOUNT_ID }}" -auto-approve
