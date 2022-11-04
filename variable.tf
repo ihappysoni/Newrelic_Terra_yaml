@@ -1,6 +1,6 @@
 variable "api_key" {
-  default = api_key
+  type = string  
 }
 variable "account_id" {
-  default = account_id
+  type = number
 }
