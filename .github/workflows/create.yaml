@@ -43,11 +43,11 @@ jobs:
 
       - name: Terraform Plan
         id  : plan
-        run : terraform plan 
+        run : terraform plan -var="key=${{ secrets.NEW_RELIC_API_KEY }}" -var="id=${{ secrets.NEW_RELIC_ACCOUNT_ID }}"
         
 
-      - name: Terraform Apply "
-        run : terraform apply -auto-approve -var="key=${{ secrets.NEW_RELIC_API_KEY }}" -var="id=${{ secrets.NEW_RELIC_ACCOUNT_ID }}
+      - name: Terraform Apply 
+        run : terraform apply -var="key=${{ secrets.NEW_RELIC_API_KEY }}" -var="id=${{ secrets.NEW_RELIC_ACCOUNT_ID }}" -auto-approve 
 
       - name: Terraform Destroy
         run : terraform destroy -auto-approve
