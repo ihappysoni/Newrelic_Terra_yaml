@@ -33,7 +33,7 @@ resource "newrelic_nrql_alert_condition" "test_alert" {
 
   warning {
     operator              = "above"
-    threshold             = 3
+    threshold             = 4
     threshold_duration    = 120
     threshold_occurrences = "ALL"
   }
